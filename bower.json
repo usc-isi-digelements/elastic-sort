@@ -20,12 +20,12 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0"
+    "polymer": "Polymer/polymer#^1.1.0",
+    "dig-common": "DigElements/dig-common#^0.0.4"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*",
-    "elastic.js": "^1.2.0",
     "elastic-client": "DigElements/elastic-client#~0.0.2",
     "elastic-client-search": "DigElements/elastic-client-search"
   },
