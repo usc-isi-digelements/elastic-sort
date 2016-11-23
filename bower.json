@@ -1,8 +1,8 @@
 {
   "name": "elastic-sort",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
-    "Rachel Artiss"
+    "Next Century Corporation"
   ],
   "description": "An element that creates an ejs.Sort() object to pass onto elastic-client-search based on user input.",
   "keywords": [

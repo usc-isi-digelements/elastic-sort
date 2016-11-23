@@ -20,11 +20,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body unresolved>
 
-    <template id="app" is="dom-bind">
+    <template id="demo" is="dom-bind">
       <elastic-client 
         config='{"host": "http://localhost:9200"}'
         client="{{esclient}}"
-        cluster-status="{{my-status}}">
+        cluster-status="{{myStatus}}">
       </elastic-client>
 
       <elastic-client-search
@@ -32,23 +32,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         index="mockads"
         query="null"
         results="{{data}}"
-        lastError="{{error}}"
+        last-error="{{error}}"
         sort="{{sort}}">
       </elastic-client-search>
 
-      <elastic-sort input-string="Sort('date').order('desc')" sort="{{sort}}" last-error="{{sortError}}"></elastic-sort>
+      <elastic-sort input-string="Sort('date').order('desc')"
+        sort="{{sort}}" last-error="{{sortError}}">
+      </elastic-sort>
 
-      <span>results sorted by date (newest first): {{data.hits.total}}</span>
-      <template is="dom-repeat" items={{data.hits.hits}} 
-        as=item>
-        <p>{{item._source.date}}</p>
-      </template>
+      <p>Input string: "Sort('date').order('desc')"</p>
+      <p>ejs object created by <code>&lt;elastic-sort&gt;</code>: {{stringify(sort)}}</p>
 
+      <p>=========</p>
+      <p><code>&lt;elastic-sort&gt;</code> sort object used with <code>&lt;elastic-client-search&gt;</code>:</p>
+      <p>{{data.hits.total}} results sorted by date (newest first, only showing first 25): </p>
+      <ul>
+        <template is="dom-repeat" items="{{data.hits.hits}}" as="item">
+          <li>Date: {{item._source.date}}</li>
+        </template>
+      </ul>
     </template>
 
-<script>
-  
+    <script>
+      (function(document) {
+        var demo = document.querySelector('#demo');
 
-</script>
+        demo.stringify = function(ejs) {
+          return JSON.stringify(ejs.toJSON());
+        };
+      })(document);
+    </script>
   </body>
 </html>

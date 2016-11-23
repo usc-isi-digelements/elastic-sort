@@ -26,7 +26,7 @@ Example:
       inputString: {
         type: String,
         notify: true,
-        observer: 'createEjsSort'
+        observer: '_createEjsSort'
       },
       /**
        * ejs.Sort() object to propagate
@@ -53,7 +53,7 @@ Example:
       }
 
     },
-    createEjsSort: function() {
+    _createEjsSort: function() {
       /* jshint -W061 */
       if(this.inputString && this.inputString.length > 0) {
           try {
