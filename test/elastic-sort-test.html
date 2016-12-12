@@ -58,6 +58,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           assert.deepEqual(element.lastError.message, 'ejs.invalidFunction is not a function');
         });
 
+        test('does not have html content', function(done) {
+          flush(function() {
+            assert.deepEqual(Polymer.dom(element.root).children.length, 0);
+            done();
+          });
+        });
+
       });
     </script>
 
