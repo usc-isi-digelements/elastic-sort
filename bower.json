@@ -1,16 +1,14 @@
 {
   "name": "elastic-sort",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "authors": [
     "Next Century Corporation"
   ],
-  "description": "An element that creates an ejs.Sort() object to pass onto elastic-client-search based on user input.",
+  "description": "A Polymer element that creates an ejs.Sort() object based on user input.",
   "keywords": [
-    "Elasticsearch",
-    "elastic",
-    "ElasticUI",
     "web-component",
-    "polymer"
+    "polymer",
+    "elastic.js"
   ],
   "main": "elastic-sort.html",
   "license": "http://polymer.github.io/LICENSE.txt",
@@ -20,16 +18,16 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0",
-    "dig-common": "DigElements/dig-common#^0.0.4"
+    "polymer": "Polymer/polymer#^1.7.0",
+    "elastic.js": "DigElements/elastic.js#6639a1030eb071fb762bcdd742fdbf037fb57b24"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "web-component-tester": "*",
-    "elastic-client": "DigElements/elastic-client#~0.0.2",
-    "elastic-client-search": "DigElements/elastic-client-search"
+    "elastic-client": "DigElements/elastic-client#^1.0.3",
+    "elastic-client-search": "DigElements/elastic-client-search#^1.0.17",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
+    "web-component-tester": "^5.0.0"
   },
   "resolutions": {
-    "lodash": "^4.6.1"
+    "lodash": "~4.17.2"
   }
 }

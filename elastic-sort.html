@@ -1,35 +1,42 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../dig-common/dig-common.html">
+<script src="../elastic.js/dist/elastic.js"></script>
+
 <!--
-An element that creates an ejs.Sort() object to pass onto elastic-client-search
-based on user input.
+A Polymer element that creates an ejs.Sort() object based on user input.
 
-Example:
+### Example
+```html
+<elastic-sort input-string="Sort('_score').order('desc')"></elastic-sort>
+```
 
-    <elastic-sort input-string="Sort('_score').order('desc')"></elastic-sort>
-
-@element elastic-sort
 @demo demo/index.html
 -->
 
 <script>
   Polymer({
-
     is: 'elastic-sort',
 
     properties: {
-
       /**
-       * String in correct format to create ejs.Sort() object with. If string is 
-       * invalid, lastError will be updated.
+       * (Required)
+       *
+       * String in correct format to create ejs.Sort() object with. If string is invalid, lastError will be updated.
+       *
+       * @type {String}
        */
       inputString: {
         type: String,
         notify: true,
-        observer: '_createEjsSort'
+        observer: '_buildSort'
       },
+
       /**
-       * ejs.Sort() object to propagate
+       * (Output)
+       *
+       * The ejs.Sort() object.
+       *
+       * @type {Object}
+       * @defualt {}
        */
       sort: {
         type: Object,
@@ -39,9 +46,15 @@ Example:
         readOnly: true,
         notify: true
       },
+
       /**
+       * (Output)
+       *
        * If error occurs in creation of ejs.Sort() object, it will be stored here.
        * Otherwise will be left empty. 
+       *
+       * @type {Object}
+       * @default {}
        */
       lastError: {
         type: Object,
@@ -51,20 +64,22 @@ Example:
         readOnly: true,
         notify: true
       }
-
     },
-    _createEjsSort: function() {
+
+    /**
+     * Builds the elasticjs sort object.
+     *
+     * @private
+     */
+    _buildSort: function() {
       /* jshint -W061 */
       if(this.inputString && this.inputString.length > 0) {
           try {
             this._setSort(eval('ejs.' + this.inputString));
           } catch(err) {
-            // capture error in lastError property
             this._setLastError(err);
           }
         }
     }
-
   });
-
 </script>

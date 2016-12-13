@@ -1,29 +1,32 @@
 # elastic-sort
 
-An element that creates an ejs.Sort() object to pass onto elastic-client-search
-based on user input.
+A Polymer element that creates an ejs.Sort() object based on user input.
 
-Example:
+### Example
+```html
+<elastic-sort input-string="Sort('_score').order('desc')"></elastic-sort>
+```
 
-    <elastic-sort input-string="Sort('_score').order('desc')"></elastic-sort>
+### Dependencies
 
-## Dependencies
-
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
+Dependencies are installed using [Bower](http://bower.io/):
 
     npm install -g bower
-
-Then, go ahead and download the element's dependencies:
-
     bower install
-    
-To run the demo, you will need a local elasticsearch instance and the mockads data referenced in the elastic-client-search repo.
 
-#### WCT Tips
+### Testing
 
-`wct -l chrome` will only run tests in chrome.
+Tests require a local instance of elasticsearch with the `mockads` index created by running `data/import_test_data.sh`.
 
-`wct -p` will keep the browsers alive after test runs (refresh to re-run).
+Tests are run using [web-component-tester](https://github.com/Polymer/web-component-tester):
 
-`wct test/some-file.html` will test only the files you specify.
+    npm install -g web-component-tester
+    wct
+
+### Demonstration & Documentation
+
+Demonstration and documentation are viewed using [polyserve](https://github.com/PolymerLabs/polyserve):
+
+    npm install -g polyserve
+    polyserve
+
