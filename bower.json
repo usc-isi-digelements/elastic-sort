@@ -1,10 +1,9 @@
 {
   "name": "elastic-sort",
-  "version": "1.0.3",
-  "authors": [
-    "Next Century Corporation"
-  ],
   "description": "A Polymer element that creates an ejs.Sort() object based on user input.",
+  "version": "1.0.3",
+  "authors": ["Next Century Corporation"],
+  "license": "Apache-2.0",
   "keywords": [
     "web-component",
     "polymer",
