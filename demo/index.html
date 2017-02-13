@@ -35,7 +35,7 @@ limitations under the License.
       <elastic-client-search
         client="[[esclient]]"
         index="mockads"
-        query="null"
+        body='{"query": {"match_all": {}}}'
         results="{{data}}"
         last-error="{{error}}"
         sort="{{sort}}">
