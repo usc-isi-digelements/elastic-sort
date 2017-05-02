@@ -90,12 +90,12 @@ A Polymer element that creates an ejs.Sort() object based on user input.
     _buildSort: function() {
       /* jshint -W061 */
       if(this.inputString && this.inputString.length > 0) {
-          try {
-            this._setSort(eval('ejs.' + this.inputString));
-          } catch(err) {
-            this._setLastError(err);
-          }
+        try {
+          this._setSort(eval('ejs.' + this.inputString));
+        } catch(err) {
+          this._setLastError(err);
         }
+      }
     }
   });
 </script>

@@ -1,7 +1,7 @@
 {
   "name": "elastic-sort",
   "description": "A Polymer element that creates an ejs.Sort() object based on user input.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "authors": ["Next Century Corporation"],
   "license": "Apache-2.0",
   "keywords": [
@@ -10,7 +10,6 @@
     "elastic.js"
   ],
   "main": "elastic-sort.html",
-  "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/DigElements/elastic-sort/",
   "ignore": [
     "/.*",
