@@ -10,18 +10,18 @@
     "elastic.js"
   ],
   "main": "elastic-sort.html",
-  "homepage": "https://github.com/DigElements/elastic-sort/",
+  "homepage": "https://github.com/usc-isi-digelements/elastic-sort/",
   "ignore": [
     "/.*",
     "/test/"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.7.0",
-    "elasticjs-import": "DigElements/elasticjs-import#~1.0.0"
+    "elasticjs-import": "usc-isi-digelements/elasticjs-import#~1.0.0"
   },
   "devDependencies": {
-    "elastic-client": "DigElements/elastic-client#^1.0.3",
-    "elastic-client-search": "DigElements/elastic-client-search#^1.0.17",
+    "elastic-client": "usc-isi-digelements/elastic-client#^1.0.3",
+    "elastic-client-search": "usc-isi-digelements/elastic-client-search#^1.0.17",
     "iron-component-page": "PolymerElements/iron-component-page#^1.1.7",
     "web-component-tester": "^5.0.0"
   },
